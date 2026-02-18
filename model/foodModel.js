@@ -21,7 +21,7 @@ const donationSchema = new mongoose.Schema({
         type: String
     },
     contactnumber :{
-        type:number
+        type: Number
     },
     uploadImages: {
         type: Array,
