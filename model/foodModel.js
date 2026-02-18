@@ -20,6 +20,9 @@ const donationSchema = new mongoose.Schema({
     pickupaddress: {
         type: String
     },
+    contactnumber :{
+        type:number
+    },
     uploadImages: {
         type: Array,
         

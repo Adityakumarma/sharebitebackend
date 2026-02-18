@@ -4,7 +4,7 @@ const donations = require("../model/foodModel");
 // add food
 exports.addDonationController = async (req, res) => {
     console.log("Inside addFood controller");
-    const { foodtype, quantity, description, pickuptime, pickupaddress} = req.body
+    const { foodtype, quantity, description, pickuptime, pickupaddress,contactnumber} = req.body
 
     var uploadImages = []
     req.files.map((item) => uploadImages.push(item.filename))
@@ -12,7 +12,7 @@ exports.addDonationController = async (req, res) => {
     const userMail = req.payload.usermail
     try {
         const newDonation = new donations({
-            foodtype, quantity, description, pickuptime, pickupaddress, uploadImages, userMail, status: "available"
+            foodtype, quantity, description, pickuptime, pickupaddress,contactnumber, uploadImages, userMail, status: "available"
         })
         await newDonation.save()
         res.status(200).json(newDonation)
